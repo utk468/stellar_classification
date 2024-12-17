@@ -1,0 +1,55 @@
+Importance of the Project
+
+The ability to accurately classify
+astronomical objects is essential 
+for a variety of reasons:
+
+Scientific Research: Understanding
+the composition and distribution
+of different types of celestial
+bodies can lead to insights 
+about the formation and 
+evolution of the universe.
+
+Efficiency: Automating the classif
+ication process allows astronomers
+to analyze large datasets more
+quickly and effectively,
+freeing up valuable time for
+ deeper investigations.
+
+Educational Value: This project
+serves as an excellent opportunity 
+to apply machine learning
+techniques to real-world
+astronomical data, making 
+it a valuable learning
+experience for students and 
+researchers in both astronomy and
+data science.
+
+
+
+
+Dataset Features
+The Stellar Classification Dataset - SDSS17 comprises various features that provide critical information about each astronomical object. Here’s a breakdown of the key features and their significance:
+
+obj_ID: A unique identifier for each object in the dataset, allowing for precise tracking and referencing throughout the analysis.
+
+alpha (Right Ascension) & delta (Declination): These coordinates define the object's position in the sky, similar to latitude and longitude on Earth. They are essential for locating celestial objects and conducting spatial analysis.
+
+u, g, r, i, z: These photometric measurements represent the intensity of light detected in different wavelengths (ultraviolet to infrared). Analyzing these values helps in determining the object's temperature, chemical composition, and distance from Earth.
+
+run_ID & rereun_ID: These identifiers specify the scan session and processing rerun of the data, ensuring that each observation is correctly matched with its imaging session.
+
+cam_col (Camera Column): Indicates the specific scanline within a run, useful for identifying the exact instrument settings used during observation.
+
+field_ID: Identifies the specific field of view during the observation, helping researchers understand the context of the data collected.
+
+spec_obj_ID: A unique identifier for objects with spectroscopic measurements, linking photometric and spectroscopic data for more detailed analysis.
+
+class: The categorical classification of the object (e.g., galaxy, star, quasar), which is the target variable for our machine learning models.
+
+redshift: A measure of how much the light has shifted toward longer wavelengths due to the object's motion away from Earth, which is crucial for estimating distances and velocities.
+
+plate, MJD, fiber_ID: These features provide information about the specific observations and instruments used, ensuring the data's reliability and facilitating future comparisons.

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #4caf50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .result-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .result-text {
+            font-size: 1.5em;
+            margin: 15px 0;
+            color: #555555;
+        }
+
+        .prediction {
+            color: #009688;
+            font-weight: bold;
+            font-size: 1.6em;
+        }
+
+        .extra-info {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #333333;
+            background-color: #fafafa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 20px auto 0;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            color: #ffffff;
+            background-color: #4caf50;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        a:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Star Classification Result</h1>
+    <div class="result-container">
+        <p class="result-text">The predicted star class is:</p>
+        <p class="prediction" id="prediction">{{ prediction }}</p>
+        <a href="/">Go Back</a>
+    </div>
+
+
+    <div id="extraInfo" class="extra-info" style="display: none;">
+
+    </div>
+
+    <script>
+        const prediction = document.getElementById("prediction").textContent.trim();
+
+        const extraInfo = {
+            "GALAXY": `
+                <h2>About Galaxies</h2>
+                <p>Galaxies are vast, gravitationally bound systems composed of stars, gas, dust, dark matter, and other celestial objects.</p>
+                <h3>Types of Galaxies</h3>
+                <ul>
+                    <li><strong>Spiral Galaxies:</strong> Characterized by rotating disks with spiral arms. Our Milky Way is a spiral galaxy.</li>
+                    <li><strong>Elliptical Galaxies:</strong> Spherical or elliptical in shape with older, less active stars.</li>
+                    <li><strong>Irregular Galaxies:</strong> Chaotic structure, often resulting from interactions with other galaxies.</li>
+                    <li><strong>Lenticular Galaxies:</strong> Intermediate form between elliptical and spiral, lacking spiral arms.</li>
+                </ul>
+                <h3>Components and Structure</h3>
+                <p>Galaxies contain stars, nebulae, dark matter, black holes, and interstellar medium, all contributing to their dynamic nature.</p>
+                <h3>Interesting Facts</h3>
+                <p>The Andromeda Galaxy, the closest spiral galaxy, will likely merge with the Milky Way in about 4.5 billion years.</p>
+            `,
+            "STAR": `
+                <h2>About Stars</h2>
+                <p>Stars are massive luminous balls of gas, primarily hydrogen and helium, that produce light and heat through nuclear fusion.</p>
+                <p>Our sun is a typical example of a star, but there are many different types, including red giants, white dwarfs, and neutron stars.</p>
+            `,
+            "QSO": `
+                <h2>About Quasars (QSOs)</h2>
+                <p>Quasars are extremely luminous active galactic nuclei with supermassive black holes at their centers, among the brightest objects in the universe.</p>
+            `
+        };
+
+        if (extraInfo[prediction]) {
+            const extraInfoDiv = document.getElementById("extraInfo");
+            extraInfoDiv.innerHTML = extraInfo[prediction];
+            extraInfoDiv.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
